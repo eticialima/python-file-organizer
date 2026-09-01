@@ -1,8 +1,10 @@
 # Python File Organizer
 
-A small automation project using `watchdog` and `pathlib`.
+A small automation project using `watchdog`, `pathlib`, and SQLite.
 
 It watches an `inbox/` folder. When a file appears, the script moves it into `organized/` based on the file extension.
+
+![PREVIEW](./preview.png) 
 
 ## Install
 
@@ -41,6 +43,15 @@ organized/documents/notes.txt
 organized/archives/archive.zip
 ```
 
+## View Move History
+
+```bash
+file-organizer history
+file-organizer history --limit 5
+```
+
+Each moved file is saved in a local SQLite database called `organizer.db`.
+
 ## Custom Folders
 
 ```bash
@@ -52,4 +63,5 @@ file-organizer organize-once --source ./inbox --target ./organized
 
 - `watchdog`: listens for filesystem events.
 - `pathlib`: handles paths in a clean, cross-platform way.
+- `sqlite3`: stores a small move history.
 - `rich`: prints friendly logs and tables.
