@@ -1,0 +1,1 @@
+"""File organizer automation example."""
